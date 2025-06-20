@@ -1,0 +1,7 @@
+package hello
+
+import std.io.*
+
+main() {
+    println("Hello, World!")
+}
