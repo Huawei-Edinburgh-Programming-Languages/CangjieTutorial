@@ -19,15 +19,7 @@
  import { getHighlighter } from 'https://esm.sh/shiki@1.0.0';
 
 
- const basePath = (() => {
-    const path = window.location.pathname;
-    if (path === '/' || path === '') return '/';
-    return path.substring(0, path.lastIndexOf('/') + 1);
-  })();
-  
-  const response = await fetch(basePath + 'Cangjie.tmlanguage.json');
-  // ... your other fetches also use basePath
-  
+ const response = await fetch('./Cangjie.tmlanguage.json');
  const cangjie = await response.json();
  
  
