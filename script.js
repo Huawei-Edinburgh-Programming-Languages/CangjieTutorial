@@ -28,11 +28,18 @@
    langs: [cangjie],
    themes: ['github-dark']
  })
- const lessonFiles = [
-    'hello-world',
-    'variables-types',
-    'values'
-];
+
+//fetch lessons from data.json
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    const lessonFiles = data;
+  })
+  .catch(error => {
+    console.error('Error loading data:', error);
+  });
+
+
 
 // ============================================================================
 // GLOBAL VARIABLES
