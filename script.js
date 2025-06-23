@@ -29,9 +29,9 @@
    themes: ['github-dark']
  })
  const lessonFiles = [
-    '01-hello-world',
-    '02-variables-types',
-    '03-values'
+    'hello-world',
+    'variables-types',
+    'values'
 ];
 
 // ============================================================================
@@ -94,8 +94,8 @@ const progressFill = document.getElementById('progressFill');
              try {
                  // Load both text and code files simultaneously
                  const [textResponse, codeResponse] = await Promise.all([
-                     fetch(`${fileName}.txt`),  // Fetch description file
-                     fetch(`${fileName}.cj`)    // Fetch code file
+                     fetch(`lessons/${fileName}.txt`),  // Fetch description file
+                     fetch(`lessons/${fileName}.cj`)    // Fetch code file
                  ]);
  
                  // Check if both files loaded successfully
