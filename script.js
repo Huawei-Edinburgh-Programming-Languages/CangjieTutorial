@@ -16,9 +16,22 @@
  * 
  * IMPORTANT: Line numbers in .txt file correspond to line numbers in .cj file
  */
+ import { getHighlighter } from 'https://esm.sh/shiki@1.0.0';
+
+
+ const response = await fetch('./Cangjie.tmlanguage.json');
+ const cangjie = await response.json();
+ 
+ 
+ 
+ const highlighter = await getHighlighter({
+   langs: [cangjie],
+   themes: ['github-dark']
+ })
  const lessonFiles = [
     '01-hello-world',
-    '02-variables-types'
+    '02-variables-types',
+    '03-values'
 ];
 
 // ============================================================================
@@ -59,73 +72,86 @@ const progressFill = document.getElementById('progressFill');
  * This function iterates through the lessonFiles array and fetches
  * both the .txt and .cj files for each lesson
  */
-async function loadAllLessons() {
-    console.log('🚀 Starting to load lessons...');
-    
-    try {
-        // Create an array of promises for loading each lesson
-        const lessonPromises = lessonFiles.map(async (fileName, index) => {
-            console.log(`📖 Loading lesson ${index + 1}: ${fileName}`);
-            
-            try {
-                // Load both text and code files simultaneously
-                const [textResponse, codeResponse] = await Promise.all([
-                    fetch(`${fileName}.txt`),  // Fetch description file
-                    fetch(`${fileName}.cj`)    // Fetch code file
-                ]);
-
-                // Check if both files loaded successfully
-                if (!textResponse.ok) {
-                    throw new Error(`Failed to load ${fileName}.txt (${textResponse.status})`);
-                }
-                if (!codeResponse.ok) {
-                    throw new Error(`Failed to load ${fileName}.cj (${codeResponse.status})`);
-                }
-
-                // Extract text content from both files
-                const [textContent, codeContent] = await Promise.all([
-                    textResponse.text(),
-                    codeResponse.text()
-                ]);
-
-                // Extract title from first line of text file
-                const lines = textContent.split('\n');
-                const title = lines[0] || `Lesson ${index + 1}`;
+ 
+ 
+ // ============================================================================
+ // FILE LOADING FUNCTIONS
+ // ============================================================================
+ 
+ /**
+  * Loads all lesson files asynchronously
+  * This function iterates through the lessonFiles array and fetches
+  * both the .txt and .cj files for each lesson
+  */
+ async function loadAllLessons() {
+     console.log('🚀 Starting to load lessons...');
+     
+     try {
+         // Create an array of promises for loading each lesson
+         const lessonPromises = lessonFiles.map(async (fileName, index) => {
+             console.log(`📖 Loading lesson ${index + 1}: ${fileName}`);
+             
+             try {
+                 // Load both text and code files simultaneously
+                 const [textResponse, codeResponse] = await Promise.all([
+                     fetch(`${fileName}.txt`),  // Fetch description file
+                     fetch(`${fileName}.cj`)    // Fetch code file
+                 ]);
+ 
+                 // Check if both files loaded successfully
+                 if (!textResponse.ok) {
+                     throw new Error(`Failed to load ${fileName}.txt (${textResponse.status})`);
+                 }
+                 if (!codeResponse.ok) {
+                     throw new Error(`Failed to load ${fileName}.cj (${codeResponse.status})`);
+                 }
+ 
+                 // Extract text content from both files
+                 const [textContent, codeContent] = await Promise.all([
+                     textResponse.text(),
+                     codeResponse.text()
+                 ]);
+                 // Highlight the Cangjie code using Shiki
+                 const highlightedCode = highlighter.codeToHtml(codeContent, { lang: 'Cangjie' , theme: 'github-dark'});
                 
-                // Create preview from first few lines
-                const preview = lines.slice(1, 4).join(' ').substring(0, 120) + '...';
-                
-                console.log(`✅ Successfully loaded lesson: ${title}`);
-                
-                // Return lesson object with all data
-                return {
-                    fileName: fileName,
-                    title: title,
-                    description: textContent,
-                    code: codeContent,
-                    preview: preview,
-                    difficulty: getDifficulty(index)
-                };
-                
-            } catch (error) {
-                console.error(`❌ Error loading lesson ${fileName}:`, error);
-                throw error;
-            }
-        });
-
-        // Wait for all lessons to load
-        lessons = await Promise.all(lessonPromises);
-        
-        console.log(`🎉 Successfully loaded ${lessons.length} lessons!`);
-        
-        // Initialize the UI with loaded lessons
-        initializeUI();
-        
-    } catch (error) {
-        console.error('💥 Failed to load lessons:', error);
-        showError();
-    }
-}
+                 // Extract title from first line of text file
+                 const lines = textContent.split('\n');
+                 const title = lines[0] || `Lesson ${index + 1}`;
+                 
+                 // Create preview from first few lines
+                 const preview = lines.slice(1, 4).join(' ').substring(0, 120) + '...';
+                 
+                 console.log(`✅ Successfully loaded lesson: ${title}`);
+                 
+                 // Return lesson object with all data
+                 return {
+                     fileName: fileName,
+                     title: title,
+                     description: textContent,
+                     code: highlightedCode,  // Store highlighted code
+                     preview: preview,
+                     difficulty: getDifficulty(index)
+                 };
+                 
+             } catch (error) {
+                 console.error(`❌ Error loading lesson ${fileName}:`, error);
+                 throw error;
+             }
+         });
+ 
+         // Wait for all lessons to load
+         lessons = await Promise.all(lessonPromises);
+         
+         console.log(`🎉 Successfully loaded ${lessons.length} lessons!`);
+         
+         // Initialize the UI with loaded lessons
+         initializeUI();
+         
+     } catch (error) {
+         console.error('💥 Failed to load lessons:', error);
+         showError();
+     }
+ }
 
 /**
  * Determines difficulty level based on lesson index
@@ -258,8 +284,11 @@ function updateCurrentLesson() {
  * Updates the code display with syntax highlighting
  */
 function updateCodeDisplay(code) {
-    codeBlock.textContent = code;
-    Prism.highlightElement(codeBlock);
+      
+    //document.getElementById('codeBlock').innerHTML = html;
+    codeBlock.innerHTML = code;
+   // console.log("hello why no work???")
+
 }
 
 /**
@@ -370,3 +399,4 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🌟 Cangjie Learning Platform starting...');
     loadAllLessons();
 });
+loadAllLessons();
