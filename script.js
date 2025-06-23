@@ -19,7 +19,7 @@
  import { getHighlighter } from 'https://esm.sh/shiki@1.0.0';
 
 
- const response = await fetch('./Cangjie.tmlanguage.json');
+ const response = await fetch('/cangjietutorial.io/Cangjie.tmlanguage.json');
  const cangjie = await response.json();
  
  
