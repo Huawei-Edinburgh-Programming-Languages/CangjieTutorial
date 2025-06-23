@@ -29,15 +29,17 @@
    themes: ['github-dark']
  })
 
-//fetch lessons from data.json
+let lessonFiles; 
+//load lessons files from data.json
 fetch('data.json')
   .then(response => response.json())
   .then(data => {
-    const lessonFiles = data;
+    lessonFiles = data;
   })
   .catch(error => {
     console.error('Error loading data:', error);
   });
+
 
 
 
