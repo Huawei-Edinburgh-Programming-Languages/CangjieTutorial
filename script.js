@@ -19,7 +19,7 @@
  import { getHighlighter } from 'https://esm.sh/shiki@1.0.0';
 
 
- const response = await fetch('https://github.com/ALIFTRS/cangjietutorial.io/blob/main/CangjietmLanguage.json');
+ const response = await fetch('./CangjietmLanguage.json');
  const cangjie = await response.json();
  
  
