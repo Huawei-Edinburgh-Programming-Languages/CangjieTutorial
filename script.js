@@ -35,6 +35,7 @@ fetch('data.json')
   .then(response => response.json())
   .then(data => {
     lessonFiles = data;
+    loadAllLessons();
   })
   .catch(error => {
     console.error('Error loading data:', error);
@@ -408,4 +409,3 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🌟 Cangjie Learning Platform starting...');
     loadAllLessons();
 });
-loadAllLessons();
