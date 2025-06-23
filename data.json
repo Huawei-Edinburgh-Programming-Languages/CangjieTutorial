@@ -1,6 +1,16 @@
 [
-  "hello-world",
-  "variables-types",
-  "values"
+  "values",
+  "functions",
+  "arrays",
+  "for-and-while",
+  "classes",
+  "interfaces",
+  "inheritance",
+  "closure",
+  "if-let",
+  "exceptions",
+  "random",
+  "sorting"
+
 ]
     
