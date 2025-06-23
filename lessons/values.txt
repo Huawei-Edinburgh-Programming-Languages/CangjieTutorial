@@ -1,0 +1,23 @@
+
+Cangjie has various value types including strings, integers, floats, booleans, etc.
+Here are a few basic examples.
+
+Strings can be added together with +
+
+Integers and floats can be used, deafult to 64 bit when type inferred.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Booleans, with boolean operators you'd expect
