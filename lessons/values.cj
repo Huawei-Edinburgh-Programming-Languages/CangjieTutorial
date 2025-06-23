@@ -1,8 +1,9 @@
-main(){
-    println("cang" + "jie")
 
-    println('1 + 1 = ${1+1}')
-    println('7.0 / 3.0 = ${7.0/3.0}')
+main(){
+    println("cang" + "jie") // cangjie
+
+    println('1 + 1 = ${1+1}') // 2
+    println('7.0 / 3.0 = ${7.0/3.0}') //3.50000
 
     var bit64 : Int64 = 3
     var bit32 : Int32 = 2
@@ -25,3 +26,13 @@ main(){
     println(true || false)
     println(!true)
 }
+
+// Output: 
+// 1 + 1 = 2
+// 7.0 / 3.0 = 2.333333
+// 3 2 1
+// 6 5 4
+// 9.000000 8.000000 7.000000
+// false
+// true
+// false

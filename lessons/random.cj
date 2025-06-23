@@ -10,3 +10,6 @@ main() {
     println("c=${c} d=${d}")
     return 0
 }
+
+// Output:
+// b=true,c=-25 d=0.728027

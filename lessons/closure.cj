@@ -9,3 +9,6 @@ main(){
     var nextInt : (Int64) -> Int64 = adding()
     println(nextInt(12))
 }
+
+// Output
+// 22

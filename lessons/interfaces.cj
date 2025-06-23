@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 interface Ia { // 'open' modifier is optional.
     func f(): Unit
 }
@@ -16,16 +6,24 @@ interface Ib {
 }
 
 class C <: Ia & Ib {
-    func f() : Unit{
+    public func f() : Unit{
         println("Function F is implemented")
     }
-    func g() : Unit{
+    public func g() : Int64{
         println("Function G is implemented")
         return 5
     }
 }
 
+main(){
+    let classInstance : C = C()
+    classInstance.f()
+    classInstance.g()
+}
 
+// Output:
+// Function F is implemented
+// Function G is implemented
 
 
 

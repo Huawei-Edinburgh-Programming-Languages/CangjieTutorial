@@ -1,13 +1,4 @@
 
-
-
-
-
-
-
-
-
-
 open class Father <: Exception {
     var father: Int32 = 0
 }
@@ -25,19 +16,19 @@ class ChildTwo <: Father {
 main(): Int64 {
     try {
         throw IllegalArgumentException("This is an Exception!")
-    } catch (e: OverflowException) {
+    } catch (e: IllegalArgumentException) {
         println(e.message)
-        println("OverflowException is caught!")
-    } catch (e: IllegalArgumentException | NegativeArraySizeException) {
-        println(e.message)
-        println("IllegalArgumentException or NegativeArraySizeException is caught!")
-    } finally {
+        println("IllegalArgumentException is caught!")
+    } catch (e: ChildTwo | ChildOne){
+        println("ChildTwo or ChildOne?")
+    } finally{
         println("finally is executed!")
     }
-    try {
-        throw ChildOne()
-    } catch (e: ChildTwo | ChildOne) {
-        println("ChildTwo or ChildOne?")
-    }
+    
     return 0
 }
+
+// Output:
+// This is an Exception!
+// IllegalArgumentException is caught!
+// finally is executed!

@@ -1,10 +1,9 @@
-There are two types of sorting in cangjie, Stable sort and Unstable sort. Stable 
-sort ensures that the sequence or equal elements remain the same before and after
-sorting. This is not the case for unstable sort.
+Sorting
+
+There are two types of sorting in cangjie, Stable sort and Unstable sort. Stable sort ensures that the sequence or equal elements remain the same before and aftersorting. This is not the case for unstable sort.
 
 
-Calls sorting in ascending order by default, only works on types T that implement
-the comparable<T> interface
+Calls sorting in ascending order by default, only works on types T that implement the comparable<T> interface
 
 Alternatively, you can pass through your own comparison operator, returning 
 Ordering.LT if rht should precede lht in ordering

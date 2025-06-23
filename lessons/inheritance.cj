@@ -15,3 +15,6 @@ main(){
     lucy.sleep()
     lucy.bark()
 }
+ // Output:
+ // zzzzzzzzz
+ // woof

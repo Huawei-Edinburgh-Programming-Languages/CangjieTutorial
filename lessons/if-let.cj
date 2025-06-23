@@ -28,3 +28,11 @@ main() {
     }
 
 }
+
+// Output:
+// Operation successful, return value: 2023
+// Operation failed
+// 1
+// 2
+// 3
+// 4

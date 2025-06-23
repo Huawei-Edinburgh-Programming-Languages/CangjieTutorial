@@ -17,3 +17,10 @@ class Rectangle {
     }
 
 }
+main(){
+    let square : Rectangle = Rectangle(5)
+    println(square.area())
+}
+
+// Output:
+// 25
