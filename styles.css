@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #ffffff 0%, #FF0000 100%);
+    background: linear-gradient(135deg, #FFF5F5 0%, #FF6B6B 100%);
     min-height: 100vh;
     color: #333;
     overflow-x: hidden;
@@ -127,7 +127,7 @@ body {
 .lesson-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    border-color: #ffffff;
+    border-color: #FFF5F5;
 }
 
 .lesson-card::before {
@@ -152,7 +152,7 @@ body {
     justify-content: center;
     width: 35px;
     height: 35px;
-    background: linear-gradient(135deg, #ffffff 0%, #FF0000 100%);
+    background: linear-gradient(135deg, #FFF5F5 0%, #FF6B6B 100%);
     color: white;
     border-radius: 50%;
     font-weight: 600;
@@ -240,7 +240,7 @@ body {
 }
 
 .start-button {
-    background: linear-gradient(135deg, #ffffff 0%, #FF0000 100%);
+    background: linear-gradient(135deg, #FFF5F5 0%, #FF6B6B 100%);
     color: white;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
@@ -333,7 +333,7 @@ body {
 }
 
 .topic-number {
-    background: linear-gradient(135deg, #ffffff 0%, #FF0000 100%);
+    background: linear-gradient(135deg, #FFF5F5 0%, #FF6B6B 100%);
     color: white;
     width: 40px;
     height: 40px;
@@ -354,7 +354,7 @@ body {
     background: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
-    border-left: 4px solid #ffffff;
+    border-left: 4px solid #FFF5F5;
     overflow-x: auto;
 }
 
@@ -442,7 +442,7 @@ code {
 }
 
 .next-button {
-    background: linear-gradient(135deg, #ffffff 0%, #FF0000 100%);
+    background: linear-gradient(135deg, #FFF5F5 0%, #FF6B6B 100%);
     color: white;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
