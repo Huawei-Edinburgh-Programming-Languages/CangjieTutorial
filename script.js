@@ -374,6 +374,60 @@ function setupEventListeners() {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.getElementById('copyCodeButton');
+    const codeBlock = document.getElementById('codeBlock');
+
+    if (copyButton && codeBlock) {
+        copyButton.addEventListener('click', async () => {
+            try {
+                // Use the modern navigator.clipboard API
+                await navigator.clipboard.writeText(codeBlock.textContent);
+                
+                // Provide some feedback to the user
+                copyButton.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyButton.textContent = 'Copy';
+                }, 2000); // Reset button text after 2 seconds
+
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+                // Fallback for older browsers or if clipboard API is not available/permitted
+                fallbackCopyTextToClipboard(codeBlock.textContent);
+                copyButton.textContent = 'Error!';
+                setTimeout(() => {
+                    copyButton.textContent = 'Copy';
+                }, 2000);
+            }
+        });
+    }
+
+    // Fallback function for older browsers or insecure contexts
+    function fallbackCopyTextToClipboard(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+
+        // Avoid scrolling to bottom
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            const successful = document.execCommand('copy');
+            const msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Fallback: Copying text command was ' + msg);
+        } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+        }
+
+        document.body.removeChild(textArea);
+    }
+});
+
 // ============================================================================
 // ANIMATION FUNCTIONS
 // ============================================================================
