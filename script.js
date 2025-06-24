@@ -167,8 +167,8 @@ const progressFill = document.getElementById('progressFill');
  * Determines difficulty level based on lesson index
  */
 function getDifficulty(index) {
-    if (index < 2) return 'beginner';
-    if (index < 5) return 'intermediate';
+    if (index < 9) return 'beginner';
+    if (index < 31) return 'intermediate';
     return 'advanced';
 }
 
