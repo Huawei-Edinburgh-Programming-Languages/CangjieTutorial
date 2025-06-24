@@ -376,53 +376,6 @@ function setupEventListeners() {
     });
 }
 
-function setupEventListeners() {
-    // Home page buttons
-    startFromBeginning.addEventListener('click', () => {
-        showLessonView(0);
-    });
-
-    randomLesson.addEventListener('click', () => {
-        const randomIndex = Math.floor(Math.random() * lessons.length);
-        showLessonView(randomIndex);
-    });
-
-    // Back to home button
-    backToHome.addEventListener('click', () => {
-        showHomePage();
-    });
-
-    // Navigation buttons
-    prevButton.addEventListener('click', () => {
-        if (currentLessonIndex > 0) {
-            currentLessonIndex--;
-            updateCurrentLesson();
-        }
-    });
-
-    nextButton.addEventListener('click', () => {
-        if (currentLessonIndex < lessons.length - 1) {
-            currentLessonIndex++;
-            updateCurrentLesson();
-        }
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (isLoading || currentView !== 'lesson') return;
-
-        if (e.key === 'ArrowLeft' && currentLessonIndex > 0) {
-            currentLessonIndex--;
-            updateCurrentLesson();
-        } else if (e.key === 'ArrowRight' && currentLessonIndex < lessons.length - 1) {
-            currentLessonIndex++;
-            updateCurrentLesson();
-        } else if (e.key === 'Escape') {
-            showHomePage();
-        }
-    });
-}
-
 
 // New function to encapsulate copy button logic
 function setupCopyButton() {
