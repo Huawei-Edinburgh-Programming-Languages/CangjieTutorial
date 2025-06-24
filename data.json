@@ -26,6 +26,7 @@
   "generic_classes",
   "Structs",
   "classes",
+  "function_type",
   "Mutable_Functions",
   "interfaces",
   "inheritance",
