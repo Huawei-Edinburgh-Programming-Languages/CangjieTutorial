@@ -1,4 +1,3 @@
-import std.collection.*
 
 func check(a : ?Int64 ){
     if (let Some(value) <- a) {
