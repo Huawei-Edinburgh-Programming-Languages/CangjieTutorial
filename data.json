@@ -28,6 +28,7 @@
   "interfaces",
   "inheritance",
   "Mutable_Functions",
+  "function_type",
   "generic_functions",
   "generic_classes",
   "IO",
