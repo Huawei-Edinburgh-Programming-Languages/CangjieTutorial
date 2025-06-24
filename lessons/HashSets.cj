@@ -21,4 +21,10 @@ main() {
 
 }
 
+// Output:
+// The element is 0
+// The element is 1
+// 10
+// true
+
 

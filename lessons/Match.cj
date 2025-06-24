@@ -48,7 +48,9 @@ main() {
     }
     println(r)
 
-
-
-
 }
+
+// Output:
+// Alice is 24 years old
+// Other
+// b is of class Brightness

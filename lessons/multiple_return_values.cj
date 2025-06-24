@@ -15,3 +15,8 @@ main()
     var (_,c) = vals()
     println(c)
 }
+
+// Output:
+// 3
+// 7
+// 7

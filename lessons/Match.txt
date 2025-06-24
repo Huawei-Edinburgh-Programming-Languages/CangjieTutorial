@@ -18,6 +18,26 @@ For each case branch, the scope level of variables after => is the same as that 
 This means that we need to be careful not to define variables with already used identifiers, additionally, having the same identifier for different variables in a tuple pattern will raise an error.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Finally, we can also use a type pattern, in this example we see that the object b is of class Brightness defined earlier.
 
 

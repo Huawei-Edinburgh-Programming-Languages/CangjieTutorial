@@ -3,6 +3,8 @@ Strings
 The string type is denoted by String and is classified into three types: single-line, multi-line, and multi-line raw string literals.
 
 
+
+
 \ can be used to include " as a character in the string literal. 
 
 
@@ -20,8 +22,7 @@ The string type is denoted by String and is classified into three types: single-
 
 
 
-Cangjie also supports interpolation, this saves us from string concatenation.
-An interpolated expression must be enclosed in braces {} and prefixed with a dollar sign $
+Cangjie also supports interpolation. An interpolated expression must be enclosed in braces {} and prefixed with a dollar sign $
 
 
 

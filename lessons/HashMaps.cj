@@ -24,5 +24,11 @@ main() {
 
     println("Length of a: ${map.size}")
 
-
 }
+
+// Output:
+// [(one, 1), (two, 2)]
+// [(a, 0), (b, 1)]
+// [(a, 2)]
+// The key is a, the value is 2
+// Length of a: 2

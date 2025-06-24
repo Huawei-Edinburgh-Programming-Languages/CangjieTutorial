@@ -1,6 +1,6 @@
 Arrays
 
-Arrays are declared as Array<T> where T represents the type if the array elements. T can be any type. Arrays are a reference type variable
+Arrays are declared as Array<T> where T represents the type. T can be any type. Arrays are a reference type variables
 
 C is initialised with 3 elements of value 0
 

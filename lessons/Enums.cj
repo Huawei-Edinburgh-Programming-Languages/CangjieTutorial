@@ -46,6 +46,8 @@ main() {
 
     let b = Blue(100)  // Unique Identifier, no issues
 
-
-
 }
+
+// Output:
+// Green
+// 2

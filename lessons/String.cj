@@ -52,5 +52,18 @@ main() {
     println("Is empty: ${empty_string.isEmpty()}")
     println("Length: ${area.size}")
 
-
 }
+// Output:
+// Initial area string: The area of a circle with radius 2.400000 is 18.095570
+// true
+// 4
+// The area of a circle with radius 1.200000 is 18.095570
+// true
+// false
+// Split parts (by space): [The, area, of, a, circle, with, radius, 2.400000, is, 18.095570]
+// Joined string: The-area-of-a-circle-with-radius-2.400000-is-18.095570
+// Trimmed string: 'some text with spaces  '
+// Lowercase: the area of a circle with radius 2.400000 is 18.095570
+// Uppercase: THE AREA OF A CIRCLE WITH RADIUS 2.400000 IS 18.095570
+// Is empty: true
+// Length: 54

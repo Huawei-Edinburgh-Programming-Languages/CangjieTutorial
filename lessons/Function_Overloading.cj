@@ -94,3 +94,12 @@ func outer() {
         g(Sub())   // Output: 2
     }
 }
+
+// Output:
+// 1
+// 1.000000
+// 2.000000
+// 0.000000
+// 3.000000
+// This is the first f2
+// This is the second f2

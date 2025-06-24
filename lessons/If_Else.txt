@@ -18,7 +18,6 @@ IF statement without an else.
 
 
 
-
 You can use logical operators like && (and) and || (or)
 
 

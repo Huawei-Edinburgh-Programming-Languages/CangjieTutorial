@@ -37,3 +37,9 @@ main()
         println("${num} has multiple digits")
     }
 }
+
+// Output
+// 7 is odd
+// 8 is divisible by 4
+// either 8 of 7 are even
+// -11 is negative

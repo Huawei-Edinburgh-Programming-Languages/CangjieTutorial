@@ -16,12 +16,17 @@ main()
     println("${b} ${c}") 
 
 
-    var d = true
+    var d = true // boolean type inferred
     println(d) 
 
     var e: Int64 
     //println(e)   
-    // cannot use uninitialized variable
-
-    
+    //cannot use uninitialized variable
 }
+
+// Output: 
+// initial
+// Cangjie Rocks
+// apple
+// 1 2
+// true
