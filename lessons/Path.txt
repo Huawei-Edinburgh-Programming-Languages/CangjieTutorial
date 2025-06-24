@@ -4,7 +4,8 @@ The fs pacage provides functions to parse and construct file paths in a way that
 operating systems (hopefully); dir/file on Linux vs. dir\file on Windows, for example.
 
 For more functionality refer to:
-https://cangjie-lang.cn/en/docs?url=%2F0.53.13%2Flibs%2Fsource_en%2Fstd%2Ffs%2Ffs_package_api%2Ffs_package_structs.html%23struct-path
+https://cangjie-lang.cn/en/docs?url=%2F0.53.13%2Flibs%2Fsource_
+en%2Fstd%2Ffs%2Ffs_package_api%2Ffs_package_structs.html%23struct-path
 
 
 
