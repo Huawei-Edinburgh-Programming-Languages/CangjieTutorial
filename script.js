@@ -280,6 +280,8 @@ function updateCurrentLesson() {
     
     // Update code display
     updateCodeDisplay(lesson.code);
+
+    setupCopyButton();
     
     // Update navigation buttons
     updateNavigationButtons();
@@ -374,29 +376,86 @@ function setupEventListeners() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function setupEventListeners() {
+    // Home page buttons
+    startFromBeginning.addEventListener('click', () => {
+        showLessonView(0);
+    });
+
+    randomLesson.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * lessons.length);
+        showLessonView(randomIndex);
+    });
+
+    // Back to home button
+    backToHome.addEventListener('click', () => {
+        showHomePage();
+    });
+
+    // Navigation buttons
+    prevButton.addEventListener('click', () => {
+        if (currentLessonIndex > 0) {
+            currentLessonIndex--;
+            updateCurrentLesson();
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentLessonIndex < lessons.length - 1) {
+            currentLessonIndex++;
+            updateCurrentLesson();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (isLoading || currentView !== 'lesson') return;
+
+        if (e.key === 'ArrowLeft' && currentLessonIndex > 0) {
+            currentLessonIndex--;
+            updateCurrentLesson();
+        } else if (e.key === 'ArrowRight' && currentLessonIndex < lessons.length - 1) {
+            currentLessonIndex++;
+            updateCurrentLesson();
+        } else if (e.key === 'Escape') {
+            showHomePage();
+        }
+    });
+}
+
+
+// New function to encapsulate copy button logic
+function setupCopyButton() {
     const copyButton = document.getElementById('copyCodeButton');
     const codeBlock = document.getElementById('codeBlock');
 
-    if (copyButton && codeBlock) {
-        copyButton.addEventListener('click', async () => {
+    // Remove any existing event listener to prevent multiple bindings
+    // This is crucial if setupCopyButton is called multiple times.
+    const oldCopyButton = copyButton.cloneNode(true);
+    copyButton.parentNode.replaceChild(oldCopyButton, copyButton);
+
+    const newCopyButton = document.getElementById('copyCodeButton'); // Get the new button reference
+
+    if (newCopyButton && codeBlock) {
+        newCopyButton.addEventListener('click', async () => {
             try {
                 // Use the modern navigator.clipboard API
+                // We access the textContent directly from the codeBlock
                 await navigator.clipboard.writeText(codeBlock.textContent);
-                
+
                 // Provide some feedback to the user
-                copyButton.textContent = 'Copied!';
+                newCopyButton.textContent = 'Copied!';
                 setTimeout(() => {
-                    copyButton.textContent = 'Copy';
+                    newCopyButton.textContent = 'Copy';
                 }, 2000); // Reset button text after 2 seconds
 
             } catch (err) {
                 console.error('Failed to copy text: ', err);
                 // Fallback for older browsers or if clipboard API is not available/permitted
                 fallbackCopyTextToClipboard(codeBlock.textContent);
-                copyButton.textContent = 'Error!';
+                newCopyButton.textContent = 'Error!';
                 setTimeout(() => {
-                    copyButton.textContent = 'Copy';
+                    newCopyButton.textContent = 'Copy';
                 }, 2000);
             }
         });
@@ -411,6 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
         textArea.style.top = "0";
         textArea.style.left = "0";
         textArea.style.position = "fixed";
+        textArea.style.opacity = "0"; // Make it invisible
 
         document.body.appendChild(textArea);
         textArea.focus();
@@ -426,7 +486,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.body.removeChild(textArea);
     }
-});
+}
+
 
 // ============================================================================
 // ANIMATION FUNCTIONS
