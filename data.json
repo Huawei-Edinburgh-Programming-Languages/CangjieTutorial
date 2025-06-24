@@ -17,6 +17,7 @@
   "HashMaps",
   "HashSets",
   "range_over_builtin_types",
+  "iterators",
   "variadic_functions",
   "closure",
   "recursion",
@@ -47,6 +48,5 @@
   "TCP",
   "UDP",
   "HTTP",
-  "iterators",
   "exceptions"
 ]

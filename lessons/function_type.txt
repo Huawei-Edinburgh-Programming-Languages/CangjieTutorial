@@ -1,3 +1,5 @@
+Function types
+
 Functions have a type in Cangjie. Therefore we can create variables with function type and pass
 them to the functions.
 
