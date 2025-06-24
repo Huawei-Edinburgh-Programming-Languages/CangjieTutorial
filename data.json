@@ -12,7 +12,29 @@
   "random",
   "sorting",
   "IO",
-  "reading-writing-files"
-
+  "reading-writing-files",
+  "accesing_thread",
+  "atomic_operations",
+  "Directories",
+  "generic_classes",
+  "generic_functions",
+  "HTTP",
+  "If_Else",
+  "iterators",
+  "monitors",
+  "multiple_return_values",
+  "mutexes",
+  "options",
+  "Path",
+  "range_over_builtin_types",
+  "recursion",
+  "regex",
+  "strings_and_runes",
+  "TCP",
+  "threads",
+  "thread_variables",
+  "UDP",
+  "Variables",
+  "variadic_functions"
 ]
     
