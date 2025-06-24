@@ -269,23 +269,24 @@ body {
 }
 
 .back-button {
-    background: rgba(255, 255, 255, 1);
-    color: black; 
-    border: 1px solid rgba(200, 200, 200, 0.7); 
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    background: #e2e8f0;
+    color: #4a5568; 
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    transform: translateY(-5px);
 }
 
 .back-button:hover {
-    background: rgba(240, 240, 240, 1); 
+    background: rgba(255, 255, 255, 0.3);
     transform: translateY(-1px);
 }
 
