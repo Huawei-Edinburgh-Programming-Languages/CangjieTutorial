@@ -1,3 +1,5 @@
+Console IO
+
 Input and output from console is done through std.console
 
 These function calls return the option type, this because the console
