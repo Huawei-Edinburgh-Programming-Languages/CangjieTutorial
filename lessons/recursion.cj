@@ -26,14 +26,13 @@ main()
     let fib: (n:Int64)->Int64 = fibonacci
     println(fib(7))
 
-
-    /*
-    let power_of_2: (Int64)->Int64 = {exp:Int64 =>
-        if(exp == 0)
-        {
-            return 1
-        }
-        return 2*power_of_2(exp-1)
-    }
-    */
 }
+
+// Output:
+// let power_of_2: (Int64)->Int64 = {exp:Int64 =>
+//     if(exp == 0)
+//     {
+//         return 1
+//     }
+//     return 2*power_of_2(exp-1)
+// }

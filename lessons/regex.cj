@@ -25,3 +25,7 @@ main()
         println(help)
     }
 }
+
+// Output: 
+// ali.Lee69@gmail.com
+// zoe.iamacat@kitty.com

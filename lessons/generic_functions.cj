@@ -21,13 +21,19 @@ main()
     sort(A) 
     for(i in A)
     {
-        println(i) 
+        print("${i} ") 
     }
+    println()
 
     var B = Array<String>(["Hello","my","name","is","Gandalf!"])
     sort(B)
     for(i in B)
     {
-        println(i)
+        print("${i} ")
     }
+    println()
 }
+
+// Output: 
+// 1 2 4 5 6 6 6 6 69 69 135 243 345 1010 4235 4235 4325 5423 5432 
+// Gandalf! Hello is my name 

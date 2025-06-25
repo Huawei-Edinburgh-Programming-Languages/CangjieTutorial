@@ -19,9 +19,7 @@ has to inherit/implement.
 
 
 
-
-We can use this function on Int64, becuase it implements Comparable<Int64> 
-interface.
+We can use this function on Int64, becuase it implements Comparable<Int64> interface.
 
 
 

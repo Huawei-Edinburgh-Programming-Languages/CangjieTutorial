@@ -18,3 +18,9 @@ main(){
     println(stringReader.readToEnd())
 
 }
+
+// Output:
+// Hello, world!
+// this is being written
+
+

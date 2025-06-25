@@ -67,14 +67,13 @@ main()
     for(i in arr2) {print("${i} ")}
     println()
 
-    /*
-    OUTPUT:
-    4 16 1 20 370 17 
-    20 370 
-    Maks
-    Wiktoria
-    Mateo
-    5 141 843 4277 
-    8 144 846 4280
-    */
 }
+
+// OUTPUT:
+// 4 16 1 20 370 17 
+// 20 370 
+// Maks
+// Wiktoria
+// Mateo
+// 5 141 843 4277 
+// 8 144 846 4280

@@ -1,7 +1,8 @@
 Regex
 
 For all regexes command reference this website: 
-https://cangjie-lang.cn/en/docs?url=%2F0.53.13%2Flibs%2Fsource_en%2Fstd%2Fregex%2Fregex_package_overview.html
+https://cangjie-lang.cn/en/docs?url=%2F0.53.13%2Flibs%2
+Fsource_en%2Fstd%2Fregex%2Fregex_package_overview.html
 
 
 

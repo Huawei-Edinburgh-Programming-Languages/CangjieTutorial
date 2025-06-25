@@ -26,3 +26,8 @@ main()
     else {println("Empty List")}
 
 }
+
+// Output:
+// 11
+// Empty List
+// YMCA

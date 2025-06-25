@@ -46,9 +46,12 @@ main()
     let a = MyArray() 
     for(i in a)
     {
-        for(p in a)
-        {
-            println("${i} ${p}")
-        }
+        for(p in a) {println("${i} ${p}")}
     }
 }
+
+// Output:
+// Numbers in Array: 1 2 3 
+// Numbers in ArrayList: 4 5 6 
+// Numbers in HashMap: (7,Ali) (8,Isaac) (9,Max) 
+// Numbers in HashSet: 10 11 12 

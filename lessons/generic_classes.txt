@@ -1,16 +1,8 @@
 Generic Classes
 
-To create a generic class in Cangjie you just place any number of type parameters
-after the name of the class in <>. Then you can use your type parameter throughout
-your class. If you want to introduce type constrains, you place it after 'where'.
-(T <: T means absolutly nothing -- each types fullfills that)
+To create a generic class in Cangjie you just place any number of type parameters after the name of the class in <>. Then you can use your type parameter throughout your class. If you want to introduce type constrains, you place it after 'where'. (T <: T means absolutly nothing -- each types fullfills that)
 
-Because we dont know what type T will be, we dont know whether it has some 
-default constructor or value, so we have to use an option for initilization of the 
-array (we set a default value of None).
-
-
-
+Because we dont know what type T will be, we dont know whether it has some default constructor or value, so we have to use an option for initilization of the  array (we set a default value of None).
 
 
 
@@ -28,9 +20,7 @@ Return of function remove is also T.
 
 
 
-getOrThrow is a function that operates on Options, and allows us to extract value
-from inside an option, as long as its not None.
-
+getOrThrow is a function that operates on Options, and allows us to extract value from inside an option, as long as its not None.
 
 
 

@@ -12,13 +12,7 @@ trailing values to an array.
 
 
 
-
-
-
-
-
 Variadic functions can be called in the usual way with individual arguments.
-
 
 
 You can also pass normal array of values to variadic function.

@@ -1,11 +1,8 @@
 Options
 
-Option type is basicly a box that either contains a value or is empty. It allows
-for performing computations which may fail.
+Option type is basically a box that either contains a value or is empty. It allows for performing computations which may fail.
 
-In this case, function tail expects an array and return its last element. However
-if the array is empty, then there is nothing to be returned. Thats why we need
-an option.
+In this case, function tail expects an array and return its last element. However if the array is empty, then there is nothing to be returned. Thats why we need an option.
 
 None means that the option is empty.
 

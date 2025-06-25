@@ -29,16 +29,15 @@ main()
     println(file.extensionName)
     println(file.fileNameWithoutExtension)
 
-    /*
-    OUTPUT:
-    p: C:/Users/Isaac/options.cj
-    dir1//filename.txt
-    dir/../dir1/filename
-    Dir(p): Some(C:/Users/Isaac)
-    Base(p): Some(options.cj)
-    false
-    true
-    Some(json)
-    Some(config)
-    */
 }
+
+// Output:
+// p: C:/Users/Isaac/options.cj
+// dir1//filename.txt
+// dir/../dir1/filename
+// Dir(p): Some(C:/Users/Isaac)
+// Base(p): Some(options.cj)
+// false
+// true
+// Some(json)
+// Some(config)

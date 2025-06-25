@@ -23,3 +23,6 @@ main() {
     println(myPurse.money)
 
 }
+
+// Output: 
+// 0

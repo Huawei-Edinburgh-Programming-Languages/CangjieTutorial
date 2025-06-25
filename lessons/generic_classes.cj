@@ -40,7 +40,8 @@ main()
     
     for(str in names) { StringQ.add(str) }
 
-    while(StringQ.is_empty() == false) { println(StringQ.remove()) }
+    while(StringQ.is_empty() == false) { print("${StringQ.remove()} ") }
+    println()
 
 
     let IntQueue = Queue<Int64>()
@@ -48,5 +49,10 @@ main()
 
     for(number in numbers) { IntQueue.add(number) }
 
-    while(IntQueue.is_empty() == false) { println(IntQueue.remove())}
+    while(IntQueue.is_empty() == false) { print("${IntQueue.remove()} ")}
+    println()
 }
+
+// Output: 
+// Isaac Ali Dan Max Sofia 
+// 1 69 420 2137 3 7 17 

@@ -10,15 +10,13 @@ en%2Fstd%2Ffs%2Ffs_package_api%2Ffs_package_structs.html%23struct-path
 
 
 
-Join should be used to construct paths in a portable way. First we call the constrcutor, then
-we chain the "join" calls to construct a hierarchical path from them.
+Join should be used to construct paths in a portable way. First we call the constrcutor, then we chain the "join" calls to construct a hierarchical path from them.
 
 
 The Path struct can operate on any of the following: //,/,\.
 For those confused, .. is a parent directory.
 
-We also have a function that given a Path, returns Option<Path>, which includes all the directories
-in hierarchical order.
+We also have a function that given a Path, returns Option<Path>, which includes all the directories in hierarchical order.
 
 fileName, as name suggests, returns the name of the file at the end of the path.
 

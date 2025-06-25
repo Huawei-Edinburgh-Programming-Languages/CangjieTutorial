@@ -53,3 +53,9 @@ main() {
     println(myCircle.area())
     println(myCircle.getName())
 }
+
+// Output: 
+// 10
+// 1
+// 113.097336
+// John

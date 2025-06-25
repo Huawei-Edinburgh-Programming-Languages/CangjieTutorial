@@ -33,7 +33,42 @@ main() {
 
     println(jv.toString())
     println(jv.toJsonString())
-    
-    
-    
+       
 }
+
+// Output:
+// func toString result is:
+// [true,null,7363,"ddddddd",736423.546]
+// func toJsonString result is:
+// [
+//   true,
+//   null,
+//   7363,
+//   "ddddddd",
+//   736423.546
+// ]
+// [true,"kjjjke\"eed",{"sdfd":"ggggg","eeeee":[341,false,{"nnnn":55.87}]},3422,22.341,false,[22,22.22,true,"ddd"],43]
+// [
+//   true,
+//   "kjjjke\"eed",
+//   {
+//     "sdfd": "ggggg",
+//     "eeeee": [
+//       341,
+//       false,
+//       {
+//         "nnnn": 55.87
+//       }
+//     ]
+//   },
+//   3422,
+//   22.341,
+//   false,
+//   [
+//     22,
+//     22.22,
+//     true,
+//     "ddd"
+//   ],
+//   43
+// ]
