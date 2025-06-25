@@ -40,3 +40,7 @@ main()
     future.get()
 
 }
+
+// Output:
+// 31420
+// Server read 3 bytes: [1, 2, 3, 0, 0, 0, 0, 0, 0, 0]

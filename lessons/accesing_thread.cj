@@ -22,3 +22,6 @@ main()
 
     println(sum_odd.get())
 }
+// Output:
+// 90
+// 100

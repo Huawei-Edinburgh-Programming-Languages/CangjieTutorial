@@ -27,3 +27,6 @@ main()
     let val = count.load()
     println("count = ${val}")
 }
+
+// Output: 
+// count = 1000

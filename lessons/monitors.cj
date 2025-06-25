@@ -34,3 +34,9 @@ main(): Int64
     fut.get()
     return 0
 }
+
+// Output: 
+// New thread: before wait
+// Main thread: set flag
+// Main thread: notify
+// New thread: after wait

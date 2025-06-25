@@ -37,3 +37,6 @@ main () {
     sleep(Duration.second)
     startClient()
 }
+
+// Output:
+// Hello Cangjie!
