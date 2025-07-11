@@ -12,22 +12,6 @@ Regarding deferred resumption, in case you just write resume in the handle block
 from outside you need to store the Resumption object, like shown in the code. It also can only be assigned to an immutable variable, therefore you can use Box to
 move the object out from the scope.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Eff() is performed at the line 43. The handler increments cnt, saves resumption state, and returns "handle block. cnt = 1" string that's stored in val.
 
 
@@ -39,5 +23,5 @@ lines 56 and 58 like before, but that's not true. Let's explain what happens in 
 
 
 First, when we reach try-handle clause a new stack is created and execution is switched to this stack.
-When Eff() is performed for the first time and handler finishes, what happens is that we return to the main stack and that's why lines 56, 58 and 61 get executed. 
-Then, as we resume the effect, execution will switch stacks again. After Eff is performed at the line 45 and handler finishes, the stack gets switched back to the main one, which was stopped at the line 61. So we proceed from here.
+When Eff() is performed for the first time and handler finishes, what happens is that we return to the main stack and that's why lines 55, 56 and 59 get executed. 
+Then, as we resume the effect, execution will switch stacks again. After Eff is performed at the line 45 and handler finishes, the stack gets switched back to the main one, which was stopped at the line 59. So we proceed from here.
