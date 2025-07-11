@@ -1,9 +1,9 @@
 import stdx.effect.Command
 
 class Example <: Command<Int64> {}
-class Luka <: Command<Unit> {}
-class Alin <: Command<Unit> {}
-class Teo <: Command<Unit> {}
+class One <: Command<Unit> {}
+class Two <: Command<Unit> {}
+class Three <: Command<Unit> {}
 class Default <: Command<Unit> {
     public func defaultImpl() {
         println("defaultImpl called")
@@ -13,42 +13,42 @@ class Default <: Command<Unit> {
 main() {
     // Simple Example With Producing a Value
     try {
-        print("Luka ")
+        print("one ")
         var foo = perform Example()
-        print("Teo: ${foo} ")
+        print("three: ${foo} ")
     } handle (_: Example) {
-        print("Alin ")
+        print("two ")
         resume with 99
     }
-    println("Magnus")
+    println("four")
 
     // Nested Effects and Dynamic Binding
     try { 
         // Handled with outer handler
-        perform Luka()
+        perform One()
 
         try {
             // Handled with inner handlers
-            perform Luka()
-            perform Alin()
+            perform One()
+            perform Two()
 
             // Handled with outer handler as it's not available here
-            perform Teo()
-        } handle (_: Luka) {
-            println("Luka inner")
+            perform Three()
+        } handle (_: One) {
+            println("One inner")
             resume
-        } handle (_: Alin) {
-            println("Alin")
+        } handle (_: Two) {
+            println("Two")
             resume
         }
 
-        // After perform Teo() is handled from line 50 it is not resumed, which means we will never reach this statement
+        // After perform Three() is handled from line 50 it is not resumed, which means we will never reach this statement
         println("Unreachable")
-    } handle(_: Luka) {
-        println("Luka")
+    } handle(_: One) {
+        println("One")
         resume
-    } handle(_: Teo) {
-        println("Teo")
+    } handle(_: Three) {
+        println("Three")
     }
 
     // Default Handlers
@@ -62,15 +62,16 @@ main() {
     }
 
     // The effect neither has a default handler not is handled explicitly, so an exception is thrown
-    perform Alin()
+    perform Two()
 }
 
-// Luka Alin Teo: 99 Magnus
-// Luka
-// Luka inner
-// Alin
-// Teo
+// Output:
+// one two three: 99 four
+// One
+// One inner
+// Two
+// Three
 // defaultImpl called
 // handler executed
-// An exception has occurred:
-// UnhandledCommand: Unhandled command
+// An exception has occured:
+// Unhandled Command: Unhandled command
