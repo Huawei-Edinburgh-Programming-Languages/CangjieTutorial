@@ -10,6 +10,22 @@ Regarding deferred resumption, in case you just write resume in the handle block
 from outside you need to store the Resumption object, like shown in the code. It also can only be assigned to an immutable variable, therefore you can use Box to
 move the object out from the scope.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Eff() is performed at the line 43. The handler increments cnt, saves resumption state, and returns "handle block. cnt = 1" string that's stored in val.
 
 
