@@ -40,9 +40,9 @@ main() {
     let res3: Box<Option<Resumption<Unit, String>>> = Box<Option<Resumption<Unit, String>>>(None)
     let cnt: Box<Int64> = Box(0)
     let val = try {
-        perform Eff()
+        perform Eff() // Line 43
         println("returned back to first perform")
-        perform Eff()
+        perform Eff() // Line 45
         println("returned back to the secoond perform")
         "try block. cnt = ${cnt.value}"
     } handle (_: Eff, next: Resumption<Unit, String>) {
@@ -51,27 +51,15 @@ main() {
         "handle block. cnt = ${cnt.value}"
     }
 
-    // Eff() is performed at the line 42. The handler increments cnt, saves resumption state, and returns
-    // "handle block. cnt = 1" string that's stored in val
-    println(val)
-    // Value of cnt is 1 now 
-    println(cnt)
-    // Will jump to and execute lines 43 and 44
-    // and will then jump to handler and return the string "handle block. cnt = 2"
-    println(resume res3.value.getOrThrow())
-    // The confusion may arise here when we call the handler for the second time.
-    // As it does not contain resume statement you may think it should continue executing
-    // lines 53-58 like before, but that's not true. Let's explain what happens in detail
+    
+    println(val) // Line 56
+    println(cnt) // Line 58
 
-    // First, when we reach try-handle clause a new stack is created and execution is switched to this stack.
-    // When Eff is performed for the first time and handler finishes, what happens is that we return to the main
-    // stack and that's why lines 56-61 get executed. Then, as we resume the effect, execution will switch stacks
-    // again. After Eff is performed at the line 45 and handler finishes, the stack gets switched back to the
-    // main one, which was stopped at the line 61. So we proceed from here.
 
-    // val is not updated, it's value is "handle block. cnt = 1" again
+    println(resume res3.value.getOrThrow()) // Line 61
+
+    
     println(val)
-    // handler got executed two times so cnt is 2
     println(cnt)
 }
 
