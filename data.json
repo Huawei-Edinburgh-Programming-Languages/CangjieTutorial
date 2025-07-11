@@ -48,6 +48,6 @@
   "TCP",
   "UDP",
   "HTTP",
-  "exceptions"
+  "exceptions",
   "effectHandlers"
 ]
