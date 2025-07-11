@@ -1,0 +1,11 @@
+So far, examples we have shown on the previous slide have resumed immediately after handling the effect. However, we do have the option for resuming outside the handler scope.
+
+Effect handlers implementation relies on stack switching and dynamic binding.
+
+Resumtpion<A, B> type saves the state of computation paused by perform, and it is passed to resume to jump back to the line with perform (with switching stacks)
+First parameter represents the type of an object passed to resume (resume with), while the second parameter represent the return type of resumption. For better
+understanding you can see the code.
+
+Regarding deferred resumption, in case you just write resume in the handle block the compiler automatically fills the code, but if you want to resume the effect
+from outside you need to store the Resumption object, like shown in the code. It also can only be assigned to an immutable variable, therefore you can use Box to
+move the object out from the scope.
