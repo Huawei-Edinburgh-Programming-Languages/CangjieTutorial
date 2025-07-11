@@ -1,3 +1,5 @@
+Effect Handlers
+
 Effect handlers are non-local control operations that allow programs to pause and resume execution. They are similar to exceptions but extend them in a sense that you
 can resume the code flow from the line where the effect got performed if you wish, while for exceptions the code flow only continues downward. Exceptions are thrown, while
 effects are "performed." Exceptions are caught, while effects are handled. Effect handlers allow smooth implementation of different things, like dependency injection,
