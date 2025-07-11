@@ -49,4 +49,5 @@
   "UDP",
   "HTTP",
   "exceptions"
+  "effectHandlers"
 ]
