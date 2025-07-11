@@ -49,5 +49,6 @@
   "UDP",
   "HTTP",
   "exceptions",
-  "effectHandlers"
+  "effectHandlers",
+  "resumption"
 ]
