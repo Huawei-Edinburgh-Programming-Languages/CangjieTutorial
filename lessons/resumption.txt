@@ -1,3 +1,5 @@
+Effect handlers - Resumption
+
 So far, examples we have shown on the previous slide have resumed immediately after handling the effect. However, we do have the option for resuming outside the handler scope.
 
 Effect handlers implementation relies on stack switching and dynamic binding.
