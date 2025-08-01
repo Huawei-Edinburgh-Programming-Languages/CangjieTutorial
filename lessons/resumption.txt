@@ -1,6 +1,6 @@
 Effect Handlers - Resumption
 
-So far, examples we have shown on the previous slide have resumed immediately after handling the effect. However, we do have the option for resuming outside the handler scope.
+So far, examples we have shown on the previous slide have resumed immediately after handling the effect. However, we do have the option for resuming outside the handler scope. Take into account that handlers of this type are slower, and you should write handlers without resumption argument unless needed.
 
 Effect handlers implementation relies on stack switching and dynamic binding.
 
